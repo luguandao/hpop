@@ -149,7 +149,7 @@ namespace OpenPop.Mime.Header
             return contentType;
         }
 
-        private static readonly Regex m_FilterCharsetName = new Regex(@"\w+", RegexOptions.Compiled);
+        private static readonly Regex m_FilterCharsetName = new Regex(@"[\w|-]+", RegexOptions.Compiled);
         private static string CorrectCharset(string charset)
         {
             return m_FilterCharsetName.Match(charset).Value;
